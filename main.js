@@ -112,24 +112,12 @@ let products = [
      },
  ];
 for (const product of products) {
-    document.write(`<div className="product-card">${product.title}
+    document.write(`<div class=productcard>${product.title}
         <h3 className="product-title">${product.price}</h3>
             <img src=${product.image} alt="" className="product-image">
             </div>`)
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //
