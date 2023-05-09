@@ -158,8 +158,8 @@ let users = [
 
 
 for (const user of users) {
-    if (user.age>30  );
-    console.log(user);
+    if (user.age>30  )
+    console.log(user)
 
 
 
