@@ -25,14 +25,18 @@ function cylinder(a=Math.PI, r, h) {
 
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
-function f(array) {
-    for (const arrayElement of array) {
-        console.log(arrayElement)
 
+
+function f(arr) {
+    let element= [];
+    for (const item of arr) {
+        for (const itemElement of item) {
+            element[element.length]=itemElement
+        }
     }
-
+    return element
 }
-let users = [
+console.log(users = [
     {name: 'vasya', age: 31, status: false},
     {name: 'petya', age: 30, status: true},
     {name: 'kolya', age: 29, status: true},
@@ -44,17 +48,26 @@ let users = [
     {name: 'masha', age: 30, status: true},
     {name: 'olya', age: 31, status: false},
     {name: 'max', age: 31, status: true}
-];
-        f(users)
-// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+])
 
+// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+function parText(text) {
+              document.write(<p>{text}</p>);
+
+
+}
+
+console.log(parText(`hello`));
 
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+
 // - створити функцію яка повертає найменьше число з масиву
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
