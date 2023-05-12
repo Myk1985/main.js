@@ -26,29 +26,13 @@ function cylinder(a=Math.PI, r, h) {
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 
-
-function f(arr) {
-    let element= [];
+let users=[123,78,567,`hjjj`,567];
+function array1(arr) {
     for (const item of arr) {
-        for (const itemElement of item) {
-            element[element.length]=itemElement
-        }
+        console.log(`item:${item}`)
     }
-    return element
 }
-console.log(users = [
-    {name: 'vasya', age: 31, status: false},
-    {name: 'petya', age: 30, status: true},
-    {name: 'kolya', age: 29, status: true},
-    {name: 'olya', age: 28, status: false},
-    {name: 'max', age: 30, status: true},
-    {name: 'anya', age: 31, status: false},
-    {name: 'oleg', age: 28, status: false},
-    {name: 'andrey', age: 29, status: true},
-    {name: 'masha', age: 30, status: true},
-    {name: 'olya', age: 31, status: false},
-    {name: 'max', age: 31, status: true}
-])
+array1(users);
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 function parText(text) {
@@ -84,16 +68,43 @@ uList1(`hi`, 3)
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 let array =[35,67,`ghj`, 789, undefined]
 function liArr(arr) {
-    for (const arrElement of arr) {
+    document.write('<ul>');
+    for (const item of arr) {
+        document.write(`<li>${item}</li>`);
+    }
+    document.write('</ul>');
+}
+
+liArr(array)
+
+// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+let data =[
+    {    id: 123,   name: `max`,   age:12},
+    {    id:  345,  name: `john`,    age:45},
+    {    id: 234,   name: `big`,   age:67},
+];
+function ind(arr) {
+    for (const user of arr) {
+        document.write(`<div>id:${user.id}-name:${user.name}-age:${user.age}</div>`)
         
     }
-    
+
+}
+ind(data)
+// - створити функцію яка повертає найменьше число з масиву
+const minNum =[5,8,-8,90,56,-99];
+function minElement(arr) {
+    let numb = arr[0];
+    for (let i = 1; i < arr.length ; i++) {
+        if (numb > arr[i]){
+            numb = arr[i]
+        }
+    }
+    return numb
 }
 
 
-// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-
-// - створити функцію яка повертає найменьше число з масиву
+console.log(minElement(minNum));
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
