@@ -52,19 +52,44 @@ console.log(users = [
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 function parText(text) {
-              document.write(<p>{text}</p>);
-
-
+              document.write(`<p>${text}</p>`);
 }
 
-console.log(parText(`hello`));
+parText(`hello`);
 
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+function uList(text) {
+    document.write('<ul>');
+document.write(`<li>${text}</li>`,
+    `<li>${text}</li>`,
+    `<li>${text}</li>`);
+     document.write('</ul>');
+}
+uList(`hi`)
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+function uList1(text, b) {
+    document.write('<ul>');
+    for (let i = 0; i < b ; i++) {
+
+    document.write(`<li>${text}</li>`);}
+    
+    document.write('</ul>');
+
+
+}
+uList1(`hi`, 3)
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+let array =[35,67,`ghj`, 789, undefined]
+function liArr(arr) {
+    for (const arrElement of arr) {
+        
+    }
+    
+}
+
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
