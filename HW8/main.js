@@ -83,13 +83,18 @@ this.drive = function (){
 
 
     this.info = function (){
-    console.log(`model-${this.model},year-${this.year}, speed-${this.maxSpeed}, drive-${JSON.stringify(this.drivers)}`)}
+        console.log(`model:${this.model}`)
+        console.log(`year:${this.year}`);
+        console.log(`speed:${this.maxSpeed}`);
+        console.log(`drive:${JSON.stringify(this.drivers)}`)
+    }
 
     this.increaseMaxSpeed = function (newSpeed){
-   this.maxSpeed = this.maxSpeed + newSpeed }
+    this.maxSpeed = this.maxSpeed + newSpeed }
+
 
     this.changeYear=function (newValue){
-        this.year=newValue
+    this.year=newValue
     }
 
     this.addDriver=function (driver){
