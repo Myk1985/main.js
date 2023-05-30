@@ -243,6 +243,9 @@ for (const element of coursesArray) {
     const monthDuration=document.createElement(`p`);
     const hourDuration=document.createElement(`i`);
     const modules=document.createElement(`ul`);
+h1.classList.add(`center`);
+    block2.classList.add(`border`);
+    wrapDuration.classList.add(`text-center`);
 
 
     for (const module of element.modules) {
