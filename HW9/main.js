@@ -22,11 +22,13 @@ document.body.appendChild(div.cloneNode(true))
 let array = ['Main','Products','About us','Contacts'];
 
 // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
-// let ul = document.createElement(`ul`);
-// for (const element of array) {
-//  ul.innerHTML=`(<li></li>)`
-// }
-
+let ul = document.createElement(`ul`);
+for (const element of array) {
+let li = document.createElement(`li`)
+ul.appendChild(li)
+    li.innerText=`${element}`
+}
+console.log(ul)
 
 
 
@@ -52,15 +54,15 @@ let coursesAndDurationArray = [
     {title: 'FullStack', monthDuration: 7},
     {title: 'Frontend', monthDuration: 4}];
 
-let div1 =document.createElement(`div`)
-div1.classList.add(`class`)
-let class1= document.getElementsByClassName(`class`)
-for (const item of coursesAndDurationArray) {
 
+
+for (const item of coursesAndDurationArray) {
+    let div1 =document.createElement(`div`)
+    document.body.appendChild(div1)
     div1.innerText=`${item.title} ${item.monthDuration}`;
 
 }
-console.log(div1)
+
 
 
 
