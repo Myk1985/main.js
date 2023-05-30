@@ -161,17 +161,103 @@ for (const simpson of simpsons) {
 
 //     Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
 //
-
-
-
-
-
-
-
 // =========================
 //     Цикл в циклі
+
+
 // - Є масив coursesArray котрий лежить в arrays.js (на цей момент ви вже знаєте де він знаходиться)
-//
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
 // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
+for (const element of coursesArray) {
+    const block2=document.createElement(`div`);
+    const h1 = document.createElement(`h1`);
+    const wrapDuration=document.createElement(`div`)
+    const monthDuration=document.createElement(`p`);
+    const hourDuration=document.createElement(`i`);
+    const modules=document.createElement(`ul`);
+
+
+    for (const module of element.modules) {
+        const li=document.createElement(`li`);
+        li.innerText=module;
+        modules.appendChild(li)
+    }
+      h1.innerText=element.title
+    monthDuration.innerText=element.monthDuration
+    hourDuration.innerText=element.hourDuration
+    wrapDuration.append(monthDuration,hourDuration)
+    block2.append(h1,wrapDuration,modules)
+
+
+    document.body.appendChild(block2)
+}
 // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
 // ------------------
