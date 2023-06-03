@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+<body>
+<form name="form1">
+    <input name="name" type="text">
+    <br>
+    <input name="surname" type="text">
+    <br>
+    <input name="age" type="number">
+    <br>
+<button id="buttom1"> send </button>
+
+<h1>Count <i id="number" ></i></h1>
+
+
+</form>
+
+
+
+
+
+<script >
+    const form = document.forms.form1;
+    form.onsubmit = function (e) {
+        e.preventDefault()
+        let wrapper = document.createElement(`div`)
+        const name = document.createElement(`p`);
+        const surname = document.createElement(`p`);
+        const age = document.createElement(`p`);
+        wrapper.append(name, surname, age);
+        name.innerText = `${this.name.value}`;
+        surname.innerText = `${this.surname.value}`;
+        age.innerText = `${this.age.value}`;
+
+
+        this.name.value = '';
+        this.surname.value = '';
+        this.age.value = '';
+        document.body.appendChild(wrapper)
+    }
+
+
+
+
+
+
+    const count = localStorage.getItem(`count`) || 0;
+    const block = document.getElementById(`number`);
+    const newCount = (+count + 1).toString();
+    block.innerText = newCount;
+    localStorage.setItem(`count`, newCount)
+
+
+</script>
+
+</body>
+</html>
