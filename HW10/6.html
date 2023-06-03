@@ -5,12 +5,34 @@
     <title>Title</title>
 </head>
 <body>
+<form name="age1">
+    <label><input name="age" type="number" id="teen"></label>
+    <br>
+    <br>
+    <br>
+    <button id="button">msg</button>
 
 
-
-
+</form>
+<h1 id="att"></h1>
 <script>
-  // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+const frm =document.forms.age1;
+
+frm.onsubmit=function(e){
+    e.preventDefault()
+    let mess = document.getElementById(`att`);
+    let submit = document.getElementById(`button`);
+    let input = document.getElementById(`teen`)
+    input.innerText=`${this.value}`
+        if(input.value<18){
+
+        submit.onclick=()=>{
+        mess.innerText=`Ваш вік менше 18`};
+    }}
+
+    document.body.appendChild(mess);
+
 
 </script>
 </body>
