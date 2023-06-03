@@ -6,7 +6,14 @@
 </head>
 <body>
 
+<div id="box">
+    <ul id="list">
 
+    </ul>
+<button id="prev" >Prev</button>
+<button id="next">Next</button>
+
+</div>
 
 
 <script>
@@ -15,9 +22,34 @@
   // при завантажені сторінки з'являються перші 10 об'єктів.
   //         При натисканні next виводяться настпні 10 об'єктів
   // При натисканні prev виводяться попередні 10 об'єктів
-let arr = [...Array(100).keys()];
-  console.log(arr);
+let arr = [];
+let page =1;
+  for (let i=0;i<100;i++){
+            arr.push({id:i,name:`text-${i}`});
 
+  }
+  let list =document.getElementById(`list`);
+ function select (page){
+     list.innerHTML="";
+      for(let i=(page-1)*10;i<page*10;i++ ){
+          // console.log(arr[i]);
+list.innerHTML +=`<li>${arr[i].id} / ${arr[i].name}</li>`
+      }
+
+ }
+
+  // select(2)
+let prev =document.getElementById(`prev`);
+let next =document.getElementById(`next`);
+prev.onclick=()=>{
+
+    select(page--)
+};
+next.onclick=()=>{
+
+    select(page++)
+}
+select(page)
 
 
 </script>
