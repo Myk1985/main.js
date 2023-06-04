@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3 >uah:<i id="uah"></i></h3>
+
+
+
+<script>
+  // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+  // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+  //         зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+  //         При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+
+  let change = localStorage.getItem(`uahChange` ) || 100;
+  const time = localStorage.getItem(`time`);
+const price = document.getElementById(`uah`);
+  const newTime=new Date().getTime()
+  if(time && newTime-time>10000){
+      change=(+change+10);
+      localStorage.setItem(`uahChange`, change.toString());
+  }
+
+
+price.innerText=change
+  localStorage.setItem(`time`, newTime.toString())
+</script>
+</body>
+</html>
