@@ -11,6 +11,7 @@ fetch(url)
         const block = document.getElementsByClassName('wrap')[0];
         for (const user of users) {
             const user_block = document.createElement('div');
+            user_block.className=`blockUsers`
             user_block.innerText = `#${user.id} ${user.name}`;
             block.appendChild(user_block);
 

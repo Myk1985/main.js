@@ -1,6 +1,65 @@
 /*// Стилизація проєкта -*/
 /*// index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння розташувати під інформацією про user.*/
+
+/*//     post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+/*//     Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)*/
+
+.titleName{
+    text-align: center;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blockUsers {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blockUsers .user-info {
+    flex: 1;
+}
+
+.blockUsers .button-container {
+    margin-top: 10px;
+}
+
 /*//     user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.*/
 /*//     блоки з короткою іфною про post - в ряд по 5 .*/
+.dataInfo{
+    text-align: center;
+}
+
+.wrap1 {
+   align-content: center;
+    justify-content: center;
+    margin-bottom: 20px;
+   display: flex;
+
+}
+.getTitle{
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+
+}
+.wrapper{
+    width: 17%;
+    padding: 10px;
+    text-align: center;
+
+
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
 /*//     post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
 /*//     Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)*/

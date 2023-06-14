@@ -7,7 +7,7 @@ const userId = new URL(location.href).searchParams.get('userId');
 fetch(`http://jsonplaceholder.typicode.com/users/${userId}`)
     .then((res) => res.json())
     .then((user) => {
-        const block = document.getElementsByClassName('wrap')[0];
+        const block = document.getElementsByClassName('wrap1')[0];
         const ul = document.createElement('ul');
         recursiveBuild(user, ul);
         block.appendChild(ul);
@@ -38,11 +38,12 @@ function recursiveBuild(object, parent) {
 
 // 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
 // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-const Button = document.createElement('button');
-Button.textContent = "post of current user";
-document.body.appendChild(Button);
+const button = document.createElement('button');
+button.className=`getTitle`
+button.textContent = "post of current user";
+document.body.appendChild(button);
 
-Button.addEventListener('click', () => {
+button.addEventListener('click', () => {
     fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
         .then(response => response.json())
         .then(posts => {
@@ -53,12 +54,12 @@ Button.addEventListener('click', () => {
                 postTitle.textContent = post.title;
                 // 6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
                 const postLink = document.createElement('a');
-                postLink.innerText = 'Детальна інфо';
+                postLink.innerText = 'More info';
                 postLink.href = `../User post/user-posts.html?postId=${post.id}`;
 
                 const postWrapper = document.createElement('div');
-                postWrapper.appendChild(postTitle);
-                postWrapper.appendChild(postLink);
+                postWrapper.className=`wrapper`
+                postWrapper.append(postTitle,postLink);
 
                 postsContainer.appendChild(postWrapper);
             });

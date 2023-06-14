@@ -6,7 +6,7 @@
 
 const postId = new URL(location.href).searchParams.get('postId');
 
-const postDetailsBlock = document.getElementById('post-details');
+const detailsBlock = document.getElementById('post-details');
 
 fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then(response => response.json())
@@ -17,20 +17,20 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
             li.innerHTML = `<b>${key}:</b> ${post[key]}`;
             postUl.appendChild(li);
         }
-        postDetailsBlock.appendChild(postUl);
+        detailsBlock.appendChild(postUl);
 
 
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
             .then(response => response.json())
             .then(comments => {
 
-                const commentsUl = document.createElement('ul');
+                const commentsUl = document.createElement('ol');
                 comments.forEach(comment => {
                     const li = document.createElement('li');
                     li.innerHTML = `<b>Name:</b> ${comment.name}<br><b>Email:</b> ${comment.email}<br><b>Body:</b> ${comment.body}`;
                     commentsUl.appendChild(li);
                 });
-                postDetailsBlock.appendChild(commentsUl);
+                detailsBlock.appendChild(commentsUl);
             })
 
     })
