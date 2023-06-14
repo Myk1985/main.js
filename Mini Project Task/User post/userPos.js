@@ -12,6 +12,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then(response => response.json())
     .then(post => {
         const postUl = document.createElement('ul');
+        postUl.className=`blockInfo`
         for (const key in post) {
             const li = document.createElement('li');
             li.innerHTML = `<b>${key}:</b> ${post[key]}`;
@@ -24,13 +25,14 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
             .then(response => response.json())
             .then(comments => {
 
-                const commentsUl = document.createElement('ol');
+                const commentsOl = document.createElement('ol');
+                commentsOl.className=`commentsInfo`
                 comments.forEach(comment => {
                     const li = document.createElement('li');
                     li.innerHTML = `<b>Name:</b> ${comment.name}<br><b>Email:</b> ${comment.email}<br><b>Body:</b> ${comment.body}`;
-                    commentsUl.appendChild(li);
+                    commentsOl.appendChild(li);
                 });
-                detailsBlock.appendChild(commentsUl);
+                detailsBlock.appendChild(commentsOl);
             })
 
     })
