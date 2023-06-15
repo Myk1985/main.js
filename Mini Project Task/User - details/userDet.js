@@ -51,7 +51,7 @@ button.addEventListener('click', () => {
 
             posts.forEach(post => {
                 const postTitle = document.createElement('p');
-                postTitle.textContent = post.title;
+                postTitle.innerText = post.title;
                 // 6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
                 const postLink = document.createElement('a');
                 postLink.innerText = 'More info';
