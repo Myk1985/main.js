@@ -11,28 +11,29 @@ const detailsBlock = document.getElementById('post-details');
 fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
     .then(response => response.json())
     .then(post => {
-        const postUl = document.createElement('ul');
-        postUl.className=`blockInfo`
+        const postDiv = document.createElement('div');
+        postDiv.className=`blockInfo`
         for (const key in post) {
-            const li = document.createElement('li');
-            li.innerHTML = `<b>${key}:</b> ${post[key]}`;
-            postUl.appendChild(li);
+            const p = document.createElement('p');
+            p.innerHTML = `<b>${key}:</b> <i>${post[key]}</i>`;
+            postDiv.appendChild(p);
         }
-        detailsBlock.appendChild(postUl);
+        detailsBlock.appendChild(postDiv);
 
 
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
             .then(response => response.json())
             .then(comments => {
 
-                const commentsOl = document.createElement('ol');
-                commentsOl.className=`commentsInfo`
+                const commentsDiv = document.createElement('div');
+                commentsDiv.className=`commentsInfo`
                 comments.forEach(comment => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<b>Name:</b> ${comment.name}<br><b>Email:</b> ${comment.email}<br><b>Body:</b> ${comment.body}`;
-                    commentsOl.appendChild(li);
+                    const p = document.createElement('p');
+                    p.className=`comments`
+                    p.innerHTML = `<b>Name:</b> <i>${comment.name}</i><br><b>Email:</b> <i>${comment.email}</i><br><b>Body:</b> <i>${comment.body}</i>`;
+                    commentsDiv.appendChild(p);
                 });
-                detailsBlock.appendChild(commentsOl);
+                detailsBlock.appendChild(commentsDiv);
             })
 
     })
